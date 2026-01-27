@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Portal Models | Summer Athletes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+        .hero {
+            padding: 4rem 0 3rem;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #a0aec0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .sport-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            height: 100%;
+        }
+        .sport-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+            color: #fff;
+        }
+        .sport-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .sport-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .sport-card .code {
+            font-size: 0.8rem;
+            color: #a0aec0;
+            font-family: monospace;
+        }
+        .section-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a0aec0;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #666;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>Transfer Portal Models</h1>
+            <p>AI-powered transfer portal analytics for college athletics. Select a sport to explore player valuations and insights.</p>
+        </div>
+
+        <div class="mb-5">
+            <div class="section-title">Basketball</div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="mens-basketball/" class="sport-card">
+                        <div class="icon">🏀</div>
+                        <h3>Men's Basketball</h3>
+                        <div class="code">MBB</div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="womens-basketball/" class="sport-card">
+                        <div class="icon">🏀</div>
+                        <h3>Women's Basketball</h3>
+                        <div class="code">WBB</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-5">
+            <div class="section-title">Soccer</div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="mens-soccer/" class="sport-card">
+                        <div class="icon">⚽</div>
+                        <h3>Men's Soccer</h3>
+                        <div class="code">MSO</div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="womens-soccer/" class="sport-card">
+                        <div class="icon">⚽</div>
+                        <h3>Women's Soccer</h3>
+                        <div class="code">WSO</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-5">
+            <div class="section-title">Volleyball</div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="mens-volleyball/" class="sport-card">
+                        <div class="icon">🏐</div>
+                        <h3>Men's Volleyball</h3>
+                        <div class="code">MVB</div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="womens-volleyball/" class="sport-card">
+                        <div class="icon">🏐</div>
+                        <h3>Women's Volleyball</h3>
+                        <div class="code">WVB</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-5">
+            <div class="section-title">Baseball & Softball</div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="baseball/" class="sport-card">
+                        <div class="icon">⚾</div>
+                        <h3>Baseball</h3>
+                        <div class="code">MBA</div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="softball/" class="sport-card">
+                        <div class="icon">🥎</div>
+                        <h3>Softball</h3>
+                        <div class="code">WSB</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-5">
+            <div class="section-title">Football</div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="football/" class="sport-card">
+                        <div class="icon">🏈</div>
+                        <h3>Football</h3>
+                        <div class="code">MFB</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            &copy; 2026 Summer Athletes. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
