@@ -483,4 +483,161 @@
 
 
 
+<script>
+(function() {
+  // Store page 1 tbody content
+  var table = document.getElementById('otherInstitutionsTable');
+  var page1Tbody = table.querySelector('tbody');
+  var page1HTML = page1Tbody.innerHTML;
+
+  // Page 2 data - 20 different basketball players
+  var page2Rows = [
+    { id: '800000', first: 'MARCUS', last: 'THORNTON', date: '12/01/2025', div: 'I', school: 'Duke University', conf: 'Atlantic Coast Conference', grad: true, cls: 'odd' },
+    { id: '800001', first: 'DEVIN', last: 'CARTER', date: '11/28/2025', div: 'I', school: 'University of Kentucky', conf: 'Southeastern Conference', grad: false, cls: 'even' },
+    { id: '800002', first: 'ISAIAH', last: 'MORRISON', date: '11/27/2025', div: 'I', school: 'University of Kansas', conf: 'Big 12 Conference', grad: true, cls: 'odd' },
+    { id: '800003', first: 'TYRELL', last: 'JENKINS', date: '11/25/2025', div: 'I', school: 'Villanova University', conf: 'Big East Conference', grad: true, cls: 'even' },
+    { id: '800004', first: 'KAMERON', last: 'MCGEE', date: '11/24/2025', div: 'I', school: 'University of Oregon', conf: 'Big Ten Conference', grad: false, cls: 'odd' },
+    { id: '800005', first: 'DAMARI', last: 'PRICE', date: '11/22/2025', div: 'I', school: 'University of Virginia', conf: 'Atlantic Coast Conference', grad: true, cls: 'even' },
+    { id: '800006', first: 'ELIJAH', last: 'WATSON', date: '11/21/2025', div: 'I', school: 'Ohio State University', conf: 'Big Ten Conference', grad: true, cls: 'odd' },
+    { id: '800007', first: 'XAVIER', last: 'BROOKS', date: '11/20/2025', div: 'I', school: 'University of Alabama', conf: 'Southeastern Conference', grad: false, cls: 'even' },
+    { id: '800008', first: 'JAYLEN', last: 'FOSTER', date: '11/19/2025', div: 'I', school: 'Georgetown University', conf: 'Big East Conference', grad: true, cls: 'odd' },
+    { id: '800009', first: 'ANDRE', last: 'SIMMONS', date: '11/18/2025', div: 'I', school: 'University of Houston', conf: 'Big 12 Conference', grad: true, cls: 'even' },
+    { id: '800010', first: 'TERRANCE', last: 'HALL', date: '11/17/2025', div: 'I', school: 'University of Michigan', conf: 'Big Ten Conference', grad: false, cls: 'odd' },
+    { id: '800011', first: 'MALIK', last: 'SPENCER', date: '11/15/2025', div: 'I', school: 'University of North Carolina', conf: 'Atlantic Coast Conference', grad: true, cls: 'even' },
+    { id: '800012', first: 'DESHAWN', last: 'RIVERA', date: '11/14/2025', div: 'I', school: 'University of Arizona', conf: 'Big 12 Conference', grad: true, cls: 'odd' },
+    { id: '800013', first: 'KOBE', last: 'TUCKER', date: '11/13/2025', div: 'I', school: 'Gonzaga University', conf: 'West Coast Conference', grad: false, cls: 'even' },
+    { id: '800014', first: 'RASHAD', last: 'POWELL', date: '11/12/2025', div: 'I', school: 'University of Louisville', conf: 'Atlantic Coast Conference', grad: true, cls: 'odd' },
+    { id: '800015', first: 'CAMERON', last: 'HAYES', date: '11/11/2025', div: 'I', school: 'Stanford University', conf: 'Atlantic Coast Conference', grad: true, cls: 'even' },
+    { id: '800016', first: 'JORDAN', last: 'MITCHELL', date: '11/10/2025', div: 'I', school: 'University of Wisconsin', conf: 'Big Ten Conference', grad: false, cls: 'odd' },
+    { id: '800017', first: 'TREVON', last: 'BANKS', date: '11/09/2025', div: 'I', school: 'Baylor University', conf: 'Big 12 Conference', grad: true, cls: 'even' },
+    { id: '800018', first: 'OMARI', last: 'WRIGHT', date: '11/08/2025', div: 'I', school: 'University of Georgia', conf: 'Southeastern Conference', grad: true, cls: 'odd' },
+    { id: '800019', first: 'KHALIL', last: 'FORD', date: '11/07/2025', div: 'I', school: 'University of Memphis', conf: 'American Athletic Conference', grad: false, cls: 'even' }
+  ];
+
+  function buildRow(p) {
+    var gradSpan = p.grad
+      ? '<span data-toggle="tooltip" title="' + p.first + ' is transferring to be a graduate student."><span style="font-size: 18px" class="glyphicons glyphicons-education"></span> </span>&nbsp;'
+      : '&nbsp;';
+    return '<tr role="row" class="' + p.cls + '">' +
+      '<td class=" text-center"><span style="cursor: pointer" class="input-group-addon "><i id="' + p.id + '" class="glyphicons glyphicons-star-empty" data-toggle="tooltip" title="Click to add to your Transfer Watch List"></i>&nbsp; </span></td>' +
+      '<td>2025-26</td>' +
+      '<td>21110' + p.id.slice(1) + '</td>' +
+      '<td>' + p.first + ' &nbsp;' + gradSpan + '</td>' +
+      '<td>' + p.last + '</td>' +
+      '<td class="sorting_1">' + p.date + '</td>' +
+      '<td>' + p.date + '</td>' +
+      '<td>' + p.div + '</td>' +
+      '<td>' + p.school + '</td>' +
+      '<td>Men\'s Basketball</td>' +
+      '<td></td>' +
+      '<td>' + p.conf + '</td>' +
+      '<td><a class="btn btn-warning btn-block btn-xs" href="https://web1.ncaa.org/saTransfer/notice?id=' + p.id + '" target="_self" data-toggle="tooltip" title="Click to open">Active</a></td>' +
+      '<td></td>' +
+      '</tr>';
+  }
+
+  var page2HTML = '';
+  for (var i = 0; i < page2Rows.length; i++) {
+    page2HTML += buildRow(page2Rows[i]);
+  }
+
+  var currentPage = 1;
+  var totalEntries = 70;
+  var page1Count = 50;
+  var page2Count = 20;
+
+  function updateInfoText(start, end, total) {
+    var infoEls = document.querySelectorAll('.dataTables_info');
+    for (var i = 0; i < infoEls.length; i++) {
+      infoEls[i].innerHTML = '(<span style="color: lightskyblue;">' + start + '-' + end + '</span> of <span style="color: lightskyblue;">' + total + '</span> entries)<br> (filtered from ' + total + ' total entries)';
+    }
+  }
+
+  function updatePagination(page) {
+    var paginateEls = document.querySelectorAll('.dataTables_paginate');
+    for (var p = 0; p < paginateEls.length; p++) {
+      var items = paginateEls[p].querySelectorAll('.paginate_button');
+      for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        var link = item.querySelector('a');
+        if (!link) continue;
+        var text = link.textContent.trim();
+
+        // Remove active class from all page number buttons
+        item.classList.remove('active');
+        item.classList.remove('disabled');
+
+        if (text === '1') {
+          if (page === 1) item.classList.add('active');
+        } else if (text === '2') {
+          if (page === 2) item.classList.add('active');
+        } else if (text === 'Previous') {
+          if (page === 1) item.classList.add('disabled');
+        } else if (text === 'Next') {
+          if (page === 2) item.classList.add('disabled');
+        }
+      }
+    }
+  }
+
+  function goToPage(page) {
+    if (page === currentPage) return;
+    if (page < 1 || page > 2) return;
+    currentPage = page;
+
+    // Remove old tbody and create new one (simulates real DataTables behavior)
+    var oldTbody = table.querySelector('tbody');
+    if (oldTbody) {
+      oldTbody.parentNode.removeChild(oldTbody);
+    }
+    var newTbody = document.createElement('tbody');
+    newTbody.style = '';
+    if (page === 1) {
+      newTbody.innerHTML = page1HTML;
+      updateInfoText(1, page1Count, totalEntries);
+    } else {
+      newTbody.innerHTML = page2HTML;
+      updateInfoText(51, page1Count + page2Count, totalEntries);
+    }
+    // Insert the new tbody after thead (or at end of table)
+    var thead = table.querySelector('thead');
+    if (thead && thead.nextSibling) {
+      table.insertBefore(newTbody, thead.nextSibling);
+    } else {
+      table.appendChild(newTbody);
+    }
+
+    updatePagination(page);
+  }
+
+  // Attach click handlers to all pagination links
+  function attachHandlers() {
+    var paginateEls = document.querySelectorAll('.dataTables_paginate');
+    for (var p = 0; p < paginateEls.length; p++) {
+      var links = paginateEls[p].querySelectorAll('a.page-link');
+      for (var i = 0; i < links.length; i++) {
+        (function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var text = link.textContent.trim();
+            if (text === '1') {
+              goToPage(1);
+            } else if (text === '2') {
+              goToPage(2);
+            } else if (text === 'Previous') {
+              if (currentPage > 1) goToPage(currentPage - 1);
+            } else if (text === 'Next') {
+              if (currentPage < 2) goToPage(currentPage + 1);
+            }
+          });
+        })(links[i]);
+      }
+    }
+  }
+
+  // Update initial info text to reflect total of 70
+  updateInfoText(1, page1Count, totalEntries);
+  attachHandlers();
+})();
+</script>
 </body></html>
