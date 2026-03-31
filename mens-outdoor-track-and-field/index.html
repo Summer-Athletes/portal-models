@@ -241,55 +241,219 @@
                     <div class="row">
                         <div class="col-sm-5">
                             <div class="form-group-search row">
-                                <label class="col-form-label-search" for="searchInstitutionSelect">Institution:</label>
+                                <label class="col-form-label-search" for="searchNcaaId">NCAA ID:</label>
+
+                                <input id="searchNcaaId" type="text" class="form-control-search" style="background-color: white; color: black;">
 
                             </div>
                         </div>
-                        <div class="col-sm-5 pr-md-3">
+                        <div class="col-sm-5">
                             <div class="form-group-search row">
-                                <label class="col-form-label-search" for="searchSport">Sport:</label>
+                                <label class="col-form-label-search" for="searchStatus">Record Status:</label>
 
-                                <select id="searchSport" class="form-control-search select2" style="background-color: white; color: black;">
-                                    <option value="">All Sports</option>
-                                    <option value="MTO" selected="selected">Track and Field</option>
+                                <select id="searchStatus" class="form-control-search-select" style="background-color: white; color: black;">
+                                    <option value="ALL" selected=""> All</option>
+                                    <option value="INC">Active</option>
+                                    <option value="WTH">Withdrawn</option>
+                                    <option value="MAT">Matriculated</option>
+                                    <option value="SIG">Signed</option>
                                 </select>
+
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div id="otherInstitutionsTableDiv">
-                <div id="otherInstitutionsTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                    <table id="otherInstitutionsTable" class="table table-striped table-bordered dataTable dtr-inline" style="width: 100%;" role="grid" aria-describedby="otherInstitutionsTable_info">
-                        <thead>
-                            <tr role="row"><th class="text-center sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" style="width: 0px;" aria-label=": activate to sort column ascending">
+                    <!--================================  Row  ====================================-->
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="form-group-search row">
+                                <label class="col-form-label-search" for="searchInstitutionSelect">Institution:</label>
 
-                            </th><th class="sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" style="width: 0px;" aria-label="Academic Year: activate to sort column ascending">
-                                Academic Year
-                            </th><th class="sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" style="width: 0px;" aria-label="NCAA ID: activate to sort column ascending">
-                                NCAA ID
-                            </th><th class="sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" style="width: 0px;" aria-label="First Name: activate to sort column ascending">
-                                First Name
-                            </th><th class="sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" style="width: 0px;" aria-label="Last Name: activate to sort column ascending">
-                                Last Name
-                            </th><th class="sorting_asc" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" style="width: 0px;" aria-sort="ascending" aria-label="Date Submitted: activate to sort column descending">
-                                Date Submitted
-                            </th><th class="sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" style="width: 0px;" aria-label="Effective Date: activate to sort column ascending">
-                                Effective Date
-                            </th><th class="sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" style="width: 0px;" aria-label="Division: activate to sort column ascending">
-                                Division
-                            </th><th class="sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" style="width: 0px;" aria-label="Institution: activate to sort column ascending">
-                                Institution
-                            </th><th class="sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" style="width: 0px;" aria-label="Sport: activate to sort column ascending">
-                                Sport
-                            </th><th class="sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" style="width: 0px;" aria-label="Begin Term: activate to sort column ascending">
-                                Begin Term
-                            </th><th class="sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" style="width: 0px;" aria-label="Conference: activate to sort column ascending">
-                                Conference
-                            </th><th class="sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" style="width: 0px;" aria-label="Status: activate to sort column ascending">
-                                Status
+                                <select class="form-control-search chosen-select-no-results" id="searchInstitutionSelect" style="display: none; background-color: white; color: black;"><option value="ALL"> All</option></select><div class="chosen-container chosen-container-single" title="" id="searchInstitutionSelect_chosen" style="width: 100%;"><a class="chosen-single">
+  <span> All</span>
+  <div><b></b></div>
+</a>
+<div class="chosen-drop">
+  <div class="chosen-search">
+    <input class="chosen-search-input" type="text" autocomplete="off">
+  </div>
+  <ul class="chosen-results"></ul>
+</div></div>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="form-group-search row">
+                                <label class="col-form-label-search" for="searchConferenceSelect">
+                                       <abbr data-toggle="tooltip" title="" data-original-title="This is the institution's primary conference.">
+        <span class="glyphicon glyphicon-question-sign mt-xs-1" aria-hidden="true"></span>
+        <span>Conference:</span>
+    </abbr>
+                                </label>
+
+                                <select class="form-control-search chosen-select-no-results" id="searchConferenceSelect" style="display: none; background-color: white; color: black;"><option value="ALL"> All</option></select><div class="chosen-container chosen-container-single" title="" id="searchConferenceSelect_chosen" style="width: 100%;"><a class="chosen-single">
+  <span> All</span>
+  <div><b></b></div>
+</a>
+<div class="chosen-drop">
+  <div class="chosen-search">
+    <input class="chosen-search-input" type="text" autocomplete="off">
+  </div>
+  <ul class="chosen-results"></ul>
+</div></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--================================  Row  ====================================-->
+                    <div class="row">
+                        <div class="col-sm-5 pr-md-3">
+                            <div class="form-group-search row">
+                                <label class="col-form-label-search" for="searchDivisionSelect">
+                                    <abbr data-toggle="tooltip" title="" data-original-title="This is the division the institution sponsors the sport in.">
+        <span class="glyphicon glyphicon-question-sign mt-xs-1" aria-hidden="true"></span>
+        <span>Sport Division:</span>
+    </abbr>
+                                </label>
+
+                                <select id="searchDivisionSelect" class="form-control-search-select" style="background-color: rgb(22, 150, 69); color: white;">
+                                    <option value="">All</option>
+                                    <option value="1">I</option>
+                                    <option value="2">II</option>
+                                    <option value="3">III</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div class="col-sm-5">
+                            <div class="form-group-search row">
+                                <label class="col-form-label-search" for="searchSportSelect">
+                                    <abbr data-toggle="tooltip" title="" data-original-title="If a sport is not listed, a student has not been entered in the portal for that sport.">
+        <span class="glyphicon glyphicon-question-sign mt-xs-1" aria-hidden="true"></span>
+        <span>Sport:</span>
+    </abbr>
+                                </label>
+
+                                <select id="searchSportSelect" class="form-control-search-select" style="background-color: rgb(22, 150, 69); color: white;"><option value="ALL">All</option><option value="MBA">Baseball</option><option value="WFH">Field Hockey</option><option value="MFB">Football</option><option value="FBS">Football - FBS</option><option value="FCS">Football - FCS</option><option value="MBB">Men's Basketball</option><option value="MCC">Men's Cross Country</option><option value="MFE">Men's Fencing</option><option value="MGO">Men's Golf</option><option value="MGY">Men's Gymnastics</option><option value="MIH">Men's Ice Hockey</option><option value="MLA">Men's Lacrosse</option><option value="MRI">Men's Rifle</option><option value="MSK">Men's Skiing</option><option value="MSO">Men's Soccer</option><option value="MSW">Men's Swimming and Diving</option><option value="MTE">Men's Tennis</option><option value="MTI">Men's Track, Indoor</option><option value="MTO" selected="">Men's Track, Outdoor</option><option value="MVB">Men's Volleyball</option><option value="MWP">Men's Water Polo</option><option value="MWR">Men's Wrestling</option><option value="XCC">Mixed Cross Country</option><option value="XFE">Mixed Fencing</option><option value="XGO">Mixed Golf</option><option value="XGY">Mixed Gymnastics</option><option value="XLA">Mixed Lacrosse</option><option value="XRI">Mixed Rifle</option><option value="XSK">Mixed Skiing</option><option value="XSW">Mixed Swimming and Diving</option><option value="XTE">Mixed Tennis</option><option value="XTI">Mixed Track, Indoor</option><option value="XTO">Mixed Track, Outdoor</option><option value="XWR">Mixed Wrestling</option><option value="WSB">Softball</option><option value="WAT">Women's Acrobatics and Tumbling</option><option value="WBB">Women's Basketball</option><option value="WSV">Women's Beach Volleyball</option><option value="WBW">Women's Bowling</option><option value="WCC">Women's Cross Country</option><option value="WEQ">Women's Equestrian</option><option value="WFE">Women's Fencing</option><option value="WGO">Women's Golf</option><option value="WGY">Women's Gymnastics</option><option value="WIH">Women's Ice Hockey</option><option value="WLA">Women's Lacrosse</option><option value="WRI">Women's Rifle</option><option value="WCR">Women's Rowing</option><option value="WRU">Women's Rugby</option><option value="WSK">Women's Skiing</option><option value="WSO">Women's Soccer</option><option value="WST">Women's Stunt</option><option value="WSW">Women's Swimming and Diving</option><option value="WTE">Women's Tennis</option><option value="WTI">Women's Track, Indoor</option><option value="WTO">Women's Track, Outdoor</option><option value="WTL">Women's Triathlon</option><option value="WVB">Women's Volleyball</option><option value="WWP">Women's Water Polo</option><option value="WWR">Women's Wrestling</option><option value="---">No Sport</option></select>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--================================  Row  ====================================-->
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="form-group-search row">
+                                <label class="col-form-label-search" for="searchAcademicYearSelect">
+                                       <abbr data-toggle="tooltip" title="" data-original-title="Student records are visible in the academic year when they were entered in the transfer portal.">
+        <span class="glyphicon glyphicon-question-sign mt-xs-1" aria-hidden="true"></span>
+        <span>Year:</span>
+    </abbr>
+                                </label>
+
+                                <select id="searchAcademicYearSelect" class="form-control-search-select" style="background-color: rgb(22, 150, 69); color: white;">
+                                    <option value="NONE">Select</option>
+                                    <option value="ALL"> All</option>
+                                    <option value="2026">2025-26</option>
+                                    <option value="2025">2024-25</option>
+                                    <option value="2024">2023-24</option>
+                                    <option value="2023">2022-23</option>
+                                    <option value="2022">2021-22</option>
+                                    <option value="2021">2020-21</option>
+                                    <option value="2020">2019-20</option>
+                                    <option value="2019">2018-19</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 pr-md-5">
+                            <div class="form-group-search row">
+                                <label class="col-form-label-search" for="searchIsTransferGraduateStudent">Other:</label>
+                                <div class="col-sm-12" style="padding-left: 0;">
+                                    <span data-toggle="tooltip" title="" data-original-title="Search student-athletes transferring to participate as graduate students.">
+                                        <input type="checkbox" id="searchIsTransferGraduateStudent" value="N">
+                                        <i style="font-size: 18px; background-color: rgb(22, 150, 69); color: white;" id="searchIsTransferGraduateStudentGlyph">GS
+                                        </i>
+                                    </span>&nbsp;&nbsp;
+
+                                    <span data-toggle="tooltip" title="" data-original-title="Search student-athletes who have Division III permission to contact restrictions.">
+                                            <input type="checkbox" id="searchIsContactRestrictions" value="N">
+                                            <i style="font-size: 18px; font-weight: bolder; vertical-align: super; background-color: lightsteelblue; color: gray;">CR
+                                        </span>&nbsp;&nbsp;
+
+                                    <span data-toggle="tooltip" title="" data-original-title="Search student-athletes who are receiving athletic aid.">
+                                            <input type="checkbox" id="searchIsReceivingAthleticAid" value="N" class="">
+                                            <i style="font-size: 18px; font-weight: bolder; vertical-align: super; background-color: lightsteelblue; color: gray;">AA
+                                        </span>
+                                    <span data-toggle="tooltip" title="" data-original-title="Search potential multiple transfers based on multiple transfer portal entries.">
+                                          <label for="searchMultipleMatriculated"></label>
+                                          <input type="checkbox" id="searchMultipleMatriculated" value="N" class="">
+                                          <i style="font-size: 18px;font-weight: bolder;vertical-align: super" id="searchMultipleMatriculatedGlyph">MT</i>
+                                    </span>
+                                    <span data-toggle="tooltip" title="" data-original-title="Search Designated Student-Athletes.">
+                                          <label for="searchIsDesignatedStudentAthlete"></label>
+                                          <input type="checkbox" id="searchIsDesignatedStudentAthlete" value="N" class="">
+                                          <i style="font-size: 18px; font-weight: bolder; vertical-align: super; background-color: lightsteelblue; color: gray;">DSA</i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-5">
+                            <div class="form-group-search row">
+                                <div class="col-sm-12">
+                                    <br>
+                                    <button id="resetBtn" type="button" class="btn btn-sm btn-secondary ">
+                                        <span class="glyphicons glyphicons-refresh"></span>Reset
+                                    </button>
+                                    <button id="searchBtn" type="button" class="btn btn-sm btn-primary ">
+                                        <span class="glyphicons glyphicons-search"></span>Search
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--================================  end Row  ====================================-->
+
+                </div>
+                <br>
+            </div>
+            <div id="transfersTable" class="table-responsive">
+                    <div id="otherInstitutionsTable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row dtdomrow1 justify-content-sm-center"><div class="col-sm-2 dtdom1"><div class="dataTables_length" id="otherInstitutionsTable_length"><label><span data-toggle="tooltip" class="rowsHelp glyphicon glyphicon-question-sign " title="" data-original-title="You can change the display number to show more students in the list below (50, 100, 250, 500)"> Display</span> <select name="otherInstitutionsTable_length" aria-controls="otherInstitutionsTable" class="custom-select custom-select-sm form-control form-control-sm"><option value="50">50 rows</option><option value="100">100 rows</option><option value="250">250 rows</option><option value="500">500 rows</option></select> </label></div></div><div class="col-sm-3 dtdom2"><div class="dataTables_info" id="otherInstitutionsTable_info" role="status" aria-live="polite">(<span style="color: lightskyblue;">1-50</span> of <span style="color: lightskyblue;">50</span> entries)<br> (filtered from 50 total entries)</div></div><div class="col-sm-5 dtdom3"><div class="dataTables_paginate paging_simple_numbers" id="otherInstitutionsTable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="otherInstitutionsTable_previous"><a href="https://web1.ncaa.org/saTransfer/otherInstitutions#" aria-controls="otherInstitutionsTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="https://web1.ncaa.org/saTransfer/otherInstitutions#" aria-controls="otherInstitutionsTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="https://web1.ncaa.org/saTransfer/otherInstitutions#" aria-controls="otherInstitutionsTable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item next" id="otherInstitutionsTable_next"><a href="https://web1.ncaa.org/saTransfer/otherInstitutions#" aria-controls="otherInstitutionsTable" data-dt-idx="3" tabindex="0" class="page-link">Next</a></li></ul></div></div><div class="col-sm-2 dtdom4"><div class="dt-buttons btn-group">      </div></div></div><table id="otherInstitutionsTable" class="transfers table table-hover dataTable table-condensed table-striped no-footer" style="width: 100%;" aria-describedby="otherInstitutionsTable_info" role="grid">
+                        <thead>
+                        <tr role="row"><th class="text-center sorting_disabled" rowspan="1" colspan="1" aria-label="
+
+
+        TWL
+
+                            " style="width: 0px;">
+                                <abbr data-toggle="tooltip" title="" data-original-title="By placing a student on your Transfer WatchList, you will receive email notifications when there is a status change to the student's record.">
+        <span class="glyphicon glyphicon-question-sign mt-xs-1" aria-hidden="true"></span>
+        <span>TWL</span>
+    </abbr>
+                            </th><th class="sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" aria-label="Year: activate to sort column ascending" style="width: 0px;">Year</th><th class="sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" aria-label="NCAA ID: activate to sort column ascending" style="width: 0px;">NCAA ID</th><th class="sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" aria-label="First Name: activate to sort column ascending" style="width: 0px;">First Name</th><th class="sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" aria-label="Last Name: activate to sort column ascending" style="width: 0px;">Last Name</th><th class="sorting_desc" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" aria-label="
+
+                                    Initiated Date
+
+                            : activate to sort column ascending" aria-sort="descending" style="width: 0px;">
+                                <span data-toggle="tooltip" title="" data-original-title="This is the date the student was entered in the transfer portal.">
+                                    Initiated Date
+                                </span>
                             </th><th class="sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" aria-label="
-                                : activate to sort column ascending" style="width: 0px;">
+
+                                Last Updated
+
+                            : activate to sort column ascending" style="width: 0px;">
+                                <span data-toggle="tooltip" title="" data-original-title="This date shows the most recent update to the student's record.">
+                                Last Updated
+                                </span>
+                            </th><th class="sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" aria-label="
+                                D
+                            : activate to sort column ascending" style="width: 0px;">
+                                <span data-toggle="tooltip" title="" data-original-title="Institution's primary division.">D</span>
+                            </th><th class="sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" aria-label="Institution: activate to sort column ascending" style="width: 0px;">Institution</th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Sport" style="width: 0px;">Sport</th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Designated Student-Athlete" style="width: 0px;">Designated Student-Athlete</th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Sport Conference" style="width: 0px;">Sport Conference</th><th class="sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" aria-label="Student Status: activate to sort column ascending" style="width: 0px;">Student Status</th><th class="sorting" tabindex="0" aria-controls="otherInstitutionsTable" rowspan="1" colspan="1" aria-label="
+
+                            : activate to sort column ascending" style="width: 0px;">
 
                             </th></tr>
                         </thead>
@@ -320,4 +484,161 @@
 
 
 
+<script>
+(function() {
+  // Store page 1 tbody content
+  var table = document.getElementById('otherInstitutionsTable');
+  var page1Tbody = table.querySelector('tbody');
+  var page1HTML = page1Tbody.innerHTML;
+
+  // Page 2 data - 20 different track and field athletes
+  var page2Rows = [
+    { id: '1300000', first: 'MARCUS', last: 'THORNTON', date: '12/01/2025', div: 'I', school: 'Duke University', conf: 'Atlantic Coast Conference', grad: true, cls: 'odd' },
+    { id: '1300001', first: 'DEVIN', last: 'CARTER', date: '11/28/2025', div: 'I', school: 'University of Kentucky', conf: 'Southeastern Conference', grad: false, cls: 'even' },
+    { id: '1300002', first: 'ISAIAH', last: 'MORRISON', date: '11/27/2025', div: 'I', school: 'University of Kansas', conf: 'Big 12 Conference', grad: true, cls: 'odd' },
+    { id: '1300003', first: 'TYRELL', last: 'JENKINS', date: '11/25/2025', div: 'I', school: 'Villanova University', conf: 'Big East Conference', grad: true, cls: 'even' },
+    { id: '1300004', first: 'KAMERON', last: 'MCGEE', date: '11/24/2025', div: 'I', school: 'University of Oregon', conf: 'Big Ten Conference', grad: false, cls: 'odd' },
+    { id: '1300005', first: 'DAMARI', last: 'PRICE', date: '11/22/2025', div: 'I', school: 'University of Virginia', conf: 'Atlantic Coast Conference', grad: true, cls: 'even' },
+    { id: '1300006', first: 'ELIJAH', last: 'WATSON', date: '11/21/2025', div: 'I', school: 'Ohio State University', conf: 'Big Ten Conference', grad: true, cls: 'odd' },
+    { id: '1300007', first: 'XAVIER', last: 'BROOKS', date: '11/20/2025', div: 'I', school: 'University of Alabama', conf: 'Southeastern Conference', grad: false, cls: 'even' },
+    { id: '1300008', first: 'JAYLEN', last: 'FOSTER', date: '11/19/2025', div: 'I', school: 'Georgetown University', conf: 'Big East Conference', grad: true, cls: 'odd' },
+    { id: '1300009', first: 'ANDRE', last: 'SIMMONS', date: '11/18/2025', div: 'I', school: 'University of Houston', conf: 'Big 12 Conference', grad: true, cls: 'even' },
+    { id: '1300010', first: 'TERRANCE', last: 'HALL', date: '11/17/2025', div: 'I', school: 'University of Michigan', conf: 'Big Ten Conference', grad: false, cls: 'odd' },
+    { id: '1300011', first: 'MALIK', last: 'SPENCER', date: '11/15/2025', div: 'I', school: 'University of North Carolina', conf: 'Atlantic Coast Conference', grad: true, cls: 'even' },
+    { id: '1300012', first: 'DESHAWN', last: 'RIVERA', date: '11/14/2025', div: 'I', school: 'University of Arizona', conf: 'Big 12 Conference', grad: true, cls: 'odd' },
+    { id: '1300013', first: 'KOBE', last: 'TUCKER', date: '11/13/2025', div: 'I', school: 'Gonzaga University', conf: 'West Coast Conference', grad: false, cls: 'even' },
+    { id: '1300014', first: 'RASHAD', last: 'POWELL', date: '11/12/2025', div: 'I', school: 'University of Louisville', conf: 'Atlantic Coast Conference', grad: true, cls: 'odd' },
+    { id: '1300015', first: 'CAMERON', last: 'HAYES', date: '11/11/2025', div: 'I', school: 'Stanford University', conf: 'Atlantic Coast Conference', grad: true, cls: 'even' },
+    { id: '1300016', first: 'JORDAN', last: 'MITCHELL', date: '11/10/2025', div: 'I', school: 'University of Wisconsin', conf: 'Big Ten Conference', grad: false, cls: 'odd' },
+    { id: '1300017', first: 'TREVON', last: 'BANKS', date: '11/09/2025', div: 'I', school: 'Baylor University', conf: 'Big 12 Conference', grad: true, cls: 'even' },
+    { id: '1300018', first: 'OMARI', last: 'WRIGHT', date: '11/08/2025', div: 'I', school: 'University of Georgia', conf: 'Southeastern Conference', grad: true, cls: 'odd' },
+    { id: '1300019', first: 'KHALIL', last: 'FORD', date: '11/07/2025', div: 'I', school: 'University of Memphis', conf: 'American Athletic Conference', grad: false, cls: 'even' }
+  ];
+
+  function buildRow(p) {
+    var gradSpan = p.grad
+      ? '<span data-toggle="tooltip" title="' + p.first + ' is transferring to be a graduate student."><span style="font-size: 18px" class="glyphicons glyphicons-education"></span> </span>&nbsp;'
+      : '&nbsp;';
+    return '<tr role="row" class="' + p.cls + '">' +
+      '<td class=" text-center"><span style="cursor: pointer" class="input-group-addon "><i id="' + p.id + '" class="glyphicons glyphicons-star-empty" data-toggle="tooltip" title="Click to add to your Transfer Watch List"></i>&nbsp; </span></td>' +
+      '<td>2025-26</td>' +
+      '<td>21160' + p.id.slice(1) + '</td>' +
+      '<td>' + p.first + ' &nbsp;' + gradSpan + '</td>' +
+      '<td>' + p.last + '</td>' +
+      '<td class="sorting_1">' + p.date + '</td>' +
+      '<td>' + p.date + '</td>' +
+      '<td>' + p.div + '</td>' +
+      '<td>' + p.school + '</td>' +
+      '<td>Track and Field</td>' +
+      '<td></td>' +
+      '<td>' + p.conf + '</td>' +
+      '<td><a class="btn btn-warning btn-block btn-xs" href="https://web1.ncaa.org/saTransfer/notice?id=' + p.id + '" target="_self" data-toggle="tooltip" title="Click to open">Active</a></td>' +
+      '<td></td>' +
+      '</tr>';
+  }
+
+  var page2HTML = '';
+  for (var i = 0; i < page2Rows.length; i++) {
+    page2HTML += buildRow(page2Rows[i]);
+  }
+
+  var currentPage = 1;
+  var totalEntries = 70;
+  var page1Count = 50;
+  var page2Count = 20;
+
+  function updateInfoText(start, end, total) {
+    var infoEls = document.querySelectorAll('.dataTables_info');
+    for (var i = 0; i < infoEls.length; i++) {
+      infoEls[i].innerHTML = '(<span style="color: lightskyblue;">' + start + '-' + end + '</span> of <span style="color: lightskyblue;">' + total + '</span> entries)<br> (filtered from ' + total + ' total entries)';
+    }
+  }
+
+  function updatePagination(page) {
+    var paginateEls = document.querySelectorAll('.dataTables_paginate');
+    for (var p = 0; p < paginateEls.length; p++) {
+      var items = paginateEls[p].querySelectorAll('.paginate_button');
+      for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        var link = item.querySelector('a');
+        if (!link) continue;
+        var text = link.textContent.trim();
+
+        // Remove active class from all page number buttons
+        item.classList.remove('active');
+        item.classList.remove('disabled');
+
+        if (text === '1') {
+          if (page === 1) item.classList.add('active');
+        } else if (text === '2') {
+          if (page === 2) item.classList.add('active');
+        } else if (text === 'Previous') {
+          if (page === 1) item.classList.add('disabled');
+        } else if (text === 'Next') {
+          if (page === 2) item.classList.add('disabled');
+        }
+      }
+    }
+  }
+
+  function goToPage(page) {
+    if (page === currentPage) return;
+    if (page < 1 || page > 2) return;
+    currentPage = page;
+
+    // Remove old tbody and create new one (simulates real DataTables behavior)
+    var oldTbody = table.querySelector('tbody');
+    if (oldTbody) {
+      oldTbody.parentNode.removeChild(oldTbody);
+    }
+    var newTbody = document.createElement('tbody');
+    newTbody.style = '';
+    if (page === 1) {
+      newTbody.innerHTML = page1HTML;
+      updateInfoText(1, page1Count, totalEntries);
+    } else {
+      newTbody.innerHTML = page2HTML;
+      updateInfoText(51, page1Count + page2Count, totalEntries);
+    }
+    // Insert the new tbody after thead (or at end of table)
+    var thead = table.querySelector('thead');
+    if (thead && thead.nextSibling) {
+      table.insertBefore(newTbody, thead.nextSibling);
+    } else {
+      table.appendChild(newTbody);
+    }
+
+    updatePagination(page);
+  }
+
+  // Attach click handlers to all pagination links
+  function attachHandlers() {
+    var paginateEls = document.querySelectorAll('.dataTables_paginate');
+    for (var p = 0; p < paginateEls.length; p++) {
+      var links = paginateEls[p].querySelectorAll('a.page-link');
+      for (var i = 0; i < links.length; i++) {
+        (function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var text = link.textContent.trim();
+            if (text === '1') {
+              goToPage(1);
+            } else if (text === '2') {
+              goToPage(2);
+            } else if (text === 'Previous') {
+              if (currentPage > 1) goToPage(currentPage - 1);
+            } else if (text === 'Next') {
+              if (currentPage < 2) goToPage(currentPage + 1);
+            }
+          });
+        })(links[i]);
+      }
+    }
+  }
+
+  // Update initial info text to reflect total of 70
+  updateInfoText(1, page1Count, totalEntries);
+  attachHandlers();
+})();
+</script>
 </body></html>
