@@ -1,0 +1,963 @@
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.seven-day-logins-scroll {
+    max-height: 20rem;
+    overflow-y: auto;
+}
+
+/* Keep a visible scrollbar track even where macOS hides overlay scrollbars. */
+.seven-day-logins-scroll::-webkit-scrollbar {
+    width: 12px;
+}
+
+.seven-day-logins-scroll::-webkit-scrollbar-track {
+    border-radius: 6px;
+    background: #d7dce0;
+}
+
+.seven-day-logins-scroll::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: #65717c;
+}
+
+@supports (-moz-appearance: none) {
+    .seven-day-logins-scroll {
+        scrollbar-color: #65717c #d7dce0;
+    }
+}
+
+#sevenDayLoginsTable tr.login-international {
+    background-color: #fce8e8;
+}
+
+.login-country-flag {
+    color: #a11b1b;
+    font-weight: bold;
+}
+
+.login-country-badge {
+    display: inline-block;
+    padding: .12em .45em;
+    border: 1px solid #a11b1b;
+    border-radius: .25rem;
+    background: #fce8e8;
+    color: #a11b1b;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.big-pull-help {
+    position: relative;
+    margin-left: .3rem;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    background: transparent;
+    color: #004085;
+    font-size: .75rem;
+    line-height: 1.1;
+    cursor: help;
+}
+
+.big-pull-help::before {
+    content: "?";
+}
+
+.big-pull-help:hover::after,
+.big-pull-help:focus::after {
+    content: attr(data-explanation);
+    position: absolute;
+    z-index: 1060;
+    top: 100%;
+    left: 0;
+    width: 22rem;
+    max-width: 70vw;
+    padding: .5rem;
+    border-radius: .25rem;
+    background: #212529;
+    color: white;
+    font-size: .85rem;
+    font-weight: normal;
+    white-space: normal;
+    text-align: left;
+}
+
+body {
+    margin: 0;
+    font-family: Raleway, sans-serif, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+    font-size: .95rem !important;
+    font-weight: 400;
+    line-height: 1.1;
+    color: #212529;
+    text-align: left;
+    background-color: #fff
+}
+
+.row {
+    margin-left: unset;
+    margin-right: unset;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 576px
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 992px
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1300px !important;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .container {
+        width: 1300px
+    }
+}
+
+.reportLegendUnSel {
+    color: #8f8c8c;
+}
+
+.reportLegendSel {
+    color: blue;
+}
+
+/*input[type=checkbox], input[type=radio] {*/
+input[type=checkbox] {
+    box-sizing: border-box;
+    padding: 0;
+    width: 2vw;
+    height: 2vh;
+}
+
+input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+    width: 2vw;
+    height: 2vh;
+    vertical-align: center;
+}
+
+.transfers.table {
+    /*height: 500px !important;*/
+    /*overflow-y: scroll !important;*/
+    overflow: hidden !important;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent
+}
+
+.transfers.table.dataTable {
+    margin-top: 1px !important;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.transfers.table thead {
+    color: #4c4a56;
+    background-color: lightsteelblue;
+    border-top-left-radius: 2px;
+    border-right: black;
+    margin-right: 10px;
+}
+
+.transfers.table td, .transfers.table th {
+    padding: 4px;
+    /*vertical-align: top;*/
+    border-top: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+}
+
+.reportInstructions {
+    overflow-x: auto;
+    height: auto;
+    padding: 2px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    width: 153px;
+}
+
+/* Desktop navigation - ensure navbar doesn't wrap */
+@media (min-width: 992px) {
+    .navbar-nav {
+        display: flex;
+        flex-wrap: nowrap;
+        max-width: 100%;
+    }
+
+    .navbar-collapse {
+        overflow: hidden;
+    }
+}
+
+/* Consistent styling for all navigation tabs */
+.navigationTab {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 10px 15px !important;
+    min-height: 60px !important;
+    line-height: 1.2 !important;
+    font-size: 14px !important;
+}
+
+/* Ensure gear icon has proper padding */
+#userSettingsGear {
+    padding: 10px 15px !important;
+    min-height: 60px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Make home icon same size and alignment as other nav items */
+.navbar-nav > a.home {
+    width: 153px !important;
+    padding: 10px 15px !important;
+    min-height: 60px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.nav-link#home {
+    width: 153px !important;
+    padding: 10px 15px !important;
+}
+
+/* Mobile navigation improvements */
+@media (max-width: 991.98px) {
+    /* Remove right borders on mobile */
+    .nav-item {
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    /* Remove border from last item */
+    .nav-item:last-child {
+        border-bottom: none !important;
+    }
+
+    /* Center navigation links horizontally on mobile */
+    .navbar-nav {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .navigationTab {
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+        margin: 0 !important;
+        border-right: none !important;
+        padding: 15px 20px !important;
+        min-height: 50px !important;
+    }
+
+    /* Ensure home and settings icons are also centered */
+    .navbar-nav > a.home,
+    #userSettingsGear {
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+        border-right: none !important;
+        padding: 15px 20px !important;
+        min-height: 50px !important;
+    }
+}
+
+.nav-link:focus, .nav-link:hover {
+    color: #2a2929 !important;
+    background-color: #e0dedf
+}
+
+/* Header institution name and logo styling */
+.instName {
+    margin-bottom: 0 !important;
+    margin-top: 5px !important;
+}
+
+.institutionLogo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    min-height: 60px;
+}
+
+.institutionLogo img {
+    object-fit: contain;
+}
+
+.btn-group-xs > .btn, .btn-xs {
+    padding: .25rem .4rem;
+    font-size: .875rem;
+    line-height: .5;
+    border-radius: .2rem;
+}
+
+/* Responsive button groups - allow wrapping on smaller screens */
+@media (max-width: 1199px) {
+    .btn-group {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 4px;
+    }
+
+    .btn-group .btn {
+        flex: 1 1 calc(50% - 2px);
+        min-width: 70px;
+        white-space: normal !important;
+        word-break: break-word;
+        line-height: 1.2;
+        padding: 0.4rem 0.5rem;
+        overflow-wrap: break-word;
+    }
+}
+
+@media (max-width: 767px) {
+    .btn-group {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 4px;
+    }
+
+    .btn-group .btn {
+        flex: 1 1 calc(50% - 2px);
+        min-width: 60px;
+        font-size: 0.85rem;
+        padding: 0.25rem 0.375rem;
+        white-space: normal !important;
+        word-break: break-word;
+        line-height: 1.2;
+        overflow-wrap: break-word;
+    }
+}
+
+.blur {
+    filter: blur(10px);
+}
+
+#overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.oneTimeTransferSection {
+    border: 3px solid blue;
+    background-color: #bab8b8;
+}
+
+.alertEditor div.DTE div.DTE_FIELD div.DTE_Form_Content {
+    position: relative;
+    padding: 10px;
+    height: 350px;
+    width: 100%;
+    background-color: gray;
+}
+
+.alertEditor div.DTE_Body div.DTE_Body_Content div.DTE_Field {
+    padding: 0px 0px;
+}
+
+.emailContactEditor div.DTE div.DTE_Form_Content {
+    position: relative;
+    padding: 10px;
+    height: 350px;
+    width: 100%;
+}
+
+div.editor-datetime element.style {
+    top: 282.8438px;
+!important;
+    left: 436.677px;
+}
+
+div.modal-dialog {
+    max-width: 100%;
+    width: 75%;
+}
+
+/*div.modal-dialog .col-lg-4.col-form-label{*/
+/*    flex: 0 0 15%;*/
+/*    max-width: 15%;*/
+/*    text-align: right;*/
+/*}*/
+/*div.modal-dialog .col-lg-8{*/
+/*    flex: 0 0 85%;*/
+/*    max-width: 85%;*/
+/*}*/
+
+.signedInfo {
+    background: #4CBCFF;
+}
+
+.signedInfoLight {
+    background: #b3d7ff;
+}
+
+.signedInfoBtn {
+    background: #4CBCFF !important;
+    color: white !important;
+}
+
+span.matriculatedInfo {
+    display: block;
+}
+
+.completedTabActive {
+    background-color: green !important;
+    color: white;
+}
+
+.tracerCommentsActive {
+    background-color: red !important;
+    color: white;
+}
+
+.card-body-search {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    /*padding: .1rem;*/
+}
+
+.col-form-label-search {
+    /*padding-top: calc(.375rem + 1px);*/
+    /* padding-bottom: calc(.375rem + 1px); */
+    /* margin-bottom: 0; */
+    font-size: inherit;
+    font-weight: bolder;
+    line-height: .95;
+    align-self: center;
+    text-align: left;
+    vertical-align: center;
+}
+
+.col-form-label-search-reports {
+    padding-left: 0;
+    font-size: inherit;
+    font-weight: bolder;
+    line-height: .95;
+    align-self: center;
+    text-align: center;
+    vertical-align: center;
+}
+
+.form-control-search {
+    /* display: block; */
+    width: 100%;
+    padding: .25rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #495057;
+    /*background-color: #fff;*/
+    background-color: #ffffff;
+    background-clip: padding-box;
+    /*border: 1px solid #ced4da;*/
+    border-radius: .2rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.chosen-container {
+    /*padding-left: 10px;*/
+    padding-bottom: 11px;
+    /*width: 100% !important;*/
+    /*width: 260px !important;*/
+    /*background-color: #e0dcdc;*/
+}
+
+.chosen-container-multi .chosen-choices {
+    /* display: block; */
+    width: auto;
+    color: #495057;
+    font: inherit;
+
+    border: 1px solid grey;
+    border-radius: .2rem;
+    background: #e0dcdc;
+
+    -webkit-appearance: menulist-button;
+    height: 150px;
+}
+
+.form-control-search-select {
+    width: 100%;
+    padding: .25rem !important;
+    border-radius: .2rem !important;
+    color: black !important;
+    background-color: #ffffff !important;
+    line-height: 1.5rem;
+}
+
+.form-control-searchInstConf-select {
+    width: 125%;
+    padding: .020rem .125rem;
+    border-radius: .2rem;
+    background-color: #e0dcdc;
+}
+
+.reportNoSelection {
+    color: red;
+    font-weight: bold;
+}
+
+.reportSelected {
+    color: rgba(0, 0, 0, .5) !important
+}
+
+.form-control-reportSearchInstConf-select {
+    width: 64%;
+    padding: .020rem .125rem;
+    border-radius: .2rem;
+    background-color: #e0dcdc;
+}
+
+.form-group-search {
+    margin-top: .6rem;
+    margin-bottom: .6rem;
+}
+
+.box {
+    border: 2px solid #007bff;
+}
+
+.box h4 {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+}
+
+.box p {
+    color: #c4d2ed;
+    padding: 10px;
+}
+
+.box {
+    -moz-border-radius-topright: 2px;
+    -moz-border-radius-topleft: 2px;
+    -webkit-border-top-right-radius: 2px;
+    -webkit-border-top-left-radius: 2px;
+}
+
+.toast-ncaaId {
+    top: 150px;
+    left: 10%;
+    width: 65%
+}
+
+.toast-staff-msg {
+    top: 150px;
+    left: 15%;
+    width: 165%
+}
+
+.toast-twl {
+    top: 20%;
+    left: 40%;
+    width: 10%
+}
+
+.toast-tracer-info-changed {
+    top: 20%;
+    left: 10%;
+    width: 80%
+}
+
+.toast-incompleteTransfers {
+    top: 20%;
+    left: 10%;
+    width: 80%
+}
+
+/* Notice entry popup can be long (D1 window text + acknowledgement); keep the Agree button reachable. */
+.toast-noticeEntry {
+    top: 5vh;
+    left: 10%;
+    width: 80%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.toast-moduleReminder {
+    top: 20%;
+    left: 10%;
+    width: 80%
+}
+
+.toast-contact {
+    top: 20%;
+    left: 40%;
+    width: 80%;
+}
+
+.toast-print {
+    top: 20%;
+    left: 30%;
+    width: 100%;
+}
+
+/* Toastr applies positionClass to #toast-container, so position and width belong here. */
+#toast-container.toast-login-activity {
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    max-width: calc(100vw - 32px);
+}
+#toast-container.toast-login-activity > div,
+#toast-container.toast-login-activity > .toast-info {
+    width: 100%;
+    background-color: #004085 !important;   /* NCAA royal blue (matches nav) */
+    background-image: none !important;       /* drop the default toastr info glyph */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    opacity: 1;
+}
+#toast-container.toast-login-activity .toast-title { font-weight: 600; }
+#toast-container.toast-login-activity a {
+    color: #cfe2ff;
+    text-decoration: underline;
+    font-weight: 600;
+}
+#toast-container.toast-login-activity a:hover { color: #ffffff; }
+#toast-container.toast-login-activity .login-policy-notice {
+    margin-top: 12px;
+    margin-bottom: 0;
+    padding-left: 20px;
+    overflow-wrap: break-word;
+}
+#toast-container.toast-login-activity .login-policy-notice li + li {
+    margin-top: 8px;
+}
+#toast-container.toast-login-activity .login-policy-notice li p {
+    margin: 0;
+}
+
+
+
+.modal-dialog {
+    max-width: 800px;
+    margin: 1.75rem auto;
+}
+
+.lightRed {
+    background-color: #f0aaaa !important
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: .59em !important;
+    white-space: nowrap;
+}
+
+.dtdomrow1 {
+    background-color: #999;
+    border-color: lightsteelblue;
+    border-style: outset;
+    border-radius: 2px;
+    padding-top: .2em;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.dtdom1 {
+    color: white;
+    font-weight: bold;
+    border-left: aliceblue;
+    padding-top: .5em;
+}
+
+.dtdom2 {
+    color: white;
+    vertical-align: top;
+    font-weight: bolder;
+}
+
+.dtdom3 {
+
+}
+
+.dtdom4 {
+    padding-top: .5em;
+}
+
+.dtdom4 .btn-secondary:hover {
+    color: #d53939 !important;
+    background-color: #eeeeee !important;
+    border-color: #545b62
+}
+
+.dtdom4 .btn-secondary {
+    color: #f8f9fa;
+    font-weight: 400;
+    background-color: #5592c9f5;
+    border-color: #191a1b;
+    border-radius: .2em !important;
+    margin-right: .5em;
+    padding-top: 0;
+    padding-bottom: 0;
+
+}
+
+.dtdom1 .rowsHelp {
+    color: black;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.dtdom1 .rowsHelp:hover {
+    color: #d53939 !important;
+}
+
+.dtdom4 .exportHelp {
+    color: black;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.dtdom4 .exportHelp:hover {
+    color: #d53939 !important;
+}
+
+.twlGlyphicons {
+    display: inline-block;
+    font-family: Glyphicons Regular, serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: inherit;
+    line-height: 1;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    vertical-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.glyphiconSearch {
+    position: relative;
+    top: -2px;
+    display: inline-block;
+    font-family: Glyphicons Regular;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    vertical-align: top;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+
+p.speal {
+    z-index: -1;
+    position: fixed;
+    top: 25%;
+    left: 20%;
+    text-align: left;
+    font-size: 14px;
+    color: black;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    .dtdom1, .dtdom2, .dtdom3 {
+        max-width: unset;
+    }
+
+    .dtdom4 {
+        max-width: 100%;
+        flex: 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    p.speal {
+        font-size: 1.5em;
+        line-height: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    p.speal {
+        font-size: 1.1em;
+        line-height: 1.1em;
+    }
+}
+
+@media print {
+    .no-print, .no-print * {
+        display: none !important;
+    }
+
+    .yes-print, .yes-print * {
+        display: inline !important;
+    }
+
+    .page-break {
+        display: block;
+        page-break-before: always;
+    }
+
+    /*     https://css-tricks.com/almanac/properties/p/page-break/ */
+}
+
+@media screen {
+    .yes-print {
+        display: none !important;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        background-image: none;
+    }
+
+    .container {
+        margin-top: 0;
+    }
+}
+
+a#home {
+    border-right: 1px solid white;
+}
+
+.noticeCommentTextArea {
+    border: 1px solid red;
+}
+
+.watermark {
+    display: block;
+    position: fixed;
+    top: 50%;
+}
+
+.watermark p {
+    color: lightgrey;
+    font-size: 150px;
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+#toast-container > div {
+    opacity: 1;
+}
+
+/*********COLLAPSE INDICATOR************/
+.collapse-indicator:before {
+    /* symbol for "opening" panels */
+    font-family: Glyphicons Regular, serif;
+    font-size: 1.25rem; /* same size as <h5> */
+    content: "\E602";
+    float: left;
+}
+
+.collapse-indicator.collapsed:before {
+    /* symbol for "collapsed" panels */
+    content: "\E224";
+}
+
+.d1TransferToolTip abbr[data-original-title], abbr[title] {
+    text-decoration: unset !important;
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+    cursor: help;
+    border-bottom: 0;
+}
+
+/* More dropdown menu styling */
+#moreDropdown {
+    flex-shrink: 0;
+}
+
+#moreDropdown .dropdown-toggle {
+    width: 153px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+#moreDropdownMenu {
+    background-color: #343a40;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.25rem;
+    margin-top: 0;
+}
+
+#moreDropdownMenu .dropdown-item {
+    color: rgba(255, 255, 255, 0.75);
+    padding: 10px 15px;
+    font-size: 14px;
+    line-height: 1.2;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+}
+
+#moreDropdownMenu .dropdown-item:last-child {
+    border-bottom: none;
+}
+
+#moreDropdownMenu .dropdown-item:hover,
+#moreDropdownMenu .dropdown-item:focus {
+    background-color: #495057;
+    color: #fff;
+    text-decoration: none;
+}
+
+#moreDropdownMenu .dropdown-item:active {
+    background-color: #495057;
+    color: #fff;
+}
+
+/* Ensure dropdown appears above other elements */
+.navbar .dropdown-menu {
+    z-index: 1050;
+}
+
+/* Mobile adjustments for More dropdown */
+@media (max-width: 991.98px) {
+    #moreDropdown {
+        width: 100% !important;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    #moreDropdownMenu {
+        width: 100%;
+        position: static !important;
+        transform: none !important;
+        border: none;
+        border-radius: 0;
+        background-color: rgba(0, 0, 0, 0.1);
+        margin-top: 0;
+    }
+
+    #moreDropdownMenu .dropdown-item {
+        padding: 15px 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        background-color: transparent;
+    }
+
+    #moreDropdownMenu .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}
